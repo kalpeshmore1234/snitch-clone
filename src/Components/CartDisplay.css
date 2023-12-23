@@ -65,39 +65,51 @@ img{
 }
 
 .button-block{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     width: 6em;
     height: 2.2em;
     border: 1px solid #A7A7A7;
 }
 
 .val{
-    width: 20%;
     height: 100%;
+    letter-spacing: 3px;
     box-sizing: border-box;
     display: grid;
     place-items: center;
 }
 
 .plus, .minus{
-    width: 40%;
     height: 100%;
     box-sizing: border-box;
     display: grid;
     place-items: center;
+    border: none;
+    background-color: white;
+    font-size: 1.3em;
+}
+
+ #btn{
+    width: 100%;
+    margin-top: auto;
+    height: 3em;
+    text-align: center;  
+    border: none;
 }
 
 .btn{
+    box-sizing: border-box;
     width: 100%;
-    margin-top: auto;
-    height: 3.7em;
+    height: 100%;
     font-family: "Poppins";
-    background-color: black;
     color: white;
-    border: none;
+    background-color: black;
     letter-spacing: 2px;
-    
+    border: none;
 }
+
+
 
 .offers{
     width: 100%;
@@ -147,6 +159,16 @@ img{
     margin-bottom: 1em;
 }
 
+
+#minus:hover{
+   cursor:pointer;
+   background-color: #A7A7A7;
+}
+
+#plus:hover{
+    cursor: pointer;
+    background-color: #A7A7A7;
+}
 
 
 hr{

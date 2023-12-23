@@ -1,12 +1,17 @@
 import React from "react";
 import "./CartDisplay.css";
 import products from "./ProductsData";
-import { useParams } from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
+
+
+
 
 function CartDisplay() {
+  // for displaying products
   const { id } = useParams();
-
   const selectedItems = products.find((item) => item.id === parseInt(id, 10));
+
+
 
   return (
     <div className="cartdisplay">
@@ -63,13 +68,16 @@ function CartDisplay() {
               <p>QUANTITY</p>
 
               <div className="button-block">
-                <div className="minus">-</div>
+                <button className="minus" id="minus" >-</button>
                 <div className="val">1</div>
-                <div className="plus">+</div>
+                <button className="plus" id="plus" >+</button>
               </div>
             </div>
-
-            <button className="btn">ADD TO CART</button>
+            
+             <Link to="/cart" id="btn">
+             <button className="btn">ADD TO CART</button>
+             </Link>
+               
           </div>
         </div>
       ) : (

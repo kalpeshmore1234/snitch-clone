@@ -24,9 +24,9 @@ function Home() {
             products.map((product) => {
                 return(
                     <>
-                    <Link to={`/cartdisplay/${product.id}`} style={{textDecoration:'none', color:"black"}} >
+                    <Link to={`/cartdisplay/${product.id}`} style={{textDecoration:'none', color:"black"}}  key={product.id} >
                 
-                    <div className='product-block' key={product.id} onClick={() => SingleProduct(product.id)}>
+                    <div className='product-block' key={product.id} >
                       <div className="product-img-block" >
                           <img src={product.img} alt=""/>
                       </div>

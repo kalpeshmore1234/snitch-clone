@@ -34,7 +34,7 @@ function header() {
                  <PersonIcon className='icon icon-1' id="person-icon"/>
                  <SearchIcon className='icon' id="search-icon" />
                  <FavoriteIcon className='icon' id="favorite-icon"/>
-                 <ShoppingBagIcon className='icon cart-icon' id="cart-icon"/>
+                 <Link to="/cart"> <ShoppingBagIcon className='icon cart-icon' id="cart-icon"/></Link>               
                  <PhotoCameraIcon className='icon' id="camera-icon"/>
                </div>
               
