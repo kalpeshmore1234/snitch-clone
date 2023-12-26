@@ -1,14 +1,16 @@
 import React from 'react'
-import products from './ProductsData'
 import "./Home.css"
 import { Link } from 'react-router-dom'
 import Background from './Background'
+import { useSelector } from "react-redux";
 
 
 
 
 
 function Home() {
+
+    const items = useSelector((state) => state.allCart.items)
   
   return (
      <>
@@ -21,12 +23,12 @@ function Home() {
         <div className="outer-product-block">
         {
           
-            products.map((product) => {
+            items.map((product) => {
                 return(
                     <>
                     <Link to={`/cartdisplay/${product.id}`} style={{textDecoration:'none', color:"black"}}  key={product.id} >
                 
-                    <div className='product-block' key={product.id} >
+                    <div className='product-block'  key={product.id}>
                       <div className="product-img-block" >
                           <img src={product.img} alt=""/>
                       </div>
@@ -47,6 +49,7 @@ function Home() {
         </div>
        
     </div>
+
     </>
   )
   

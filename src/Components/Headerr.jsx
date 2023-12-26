@@ -7,10 +7,32 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import { Link } from 'react-router-dom';
+import "./Cart.css"
+import { useState } from 'react';
+import Cart from './Cart';
 
-function header() {
+
+
+
+
+
+function Header() {
+
+  
+ const[open, setOpen] = useState(false)
+
+ 
+
+
+ function handleOpen(){
+  setOpen(!open)
+ }
   return (
-    <div className='header'>
+   <>
+  
+    <div className='header' >
+   
+    <Cart open={open} setOpen={setOpen} className={open ? "cart" : "cart"}/>
 
       <div className="header1-block">
             <div className="offer-block">25% OFF ON OR ABOVE 2599/- SITEWIDE USE CODE SLEIGH</div>
@@ -19,7 +41,7 @@ function header() {
              <div className="nav-block">
                   
                   <div className="menu-block">
-                     <MenuIcon className="menu-icon"/>
+                     <MenuIcon className="menu-icon"  />
                   </div>
                  
                  
@@ -34,7 +56,7 @@ function header() {
                  <PersonIcon className='icon icon-1' id="person-icon"/>
                  <SearchIcon className='icon' id="search-icon" />
                  <FavoriteIcon className='icon' id="favorite-icon"/>
-                 <Link to="/cart"> <ShoppingBagIcon className='icon cart-icon' id="cart-icon"/></Link>               
+             <ShoppingBagIcon className='icon' id="cart-icon" onClick={handleOpen}/>           
                  <PhotoCameraIcon className='icon' id="camera-icon"/>
                </div>
               
@@ -46,7 +68,10 @@ function header() {
             
         </div>
     </div>
+    </>
+ 
+   
   )
 }
 
-export default header
+export default Header

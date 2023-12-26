@@ -36,7 +36,6 @@
     width:100%;
     padding: 0 3em;
     gap: 1em;
-    border: 2px solid red;
     display: grid;
 }
 

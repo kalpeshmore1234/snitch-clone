@@ -1,29 +1,36 @@
 import React from "react";
 import "./CartDisplay.css";
-import products from "./ProductsData";
-import { useParams, Link} from "react-router-dom";
-
+import { useParams} from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart} from "../features/cartSlice";
 
 
 
 function CartDisplay() {
+
+  const items = useSelector((state) => state.allCart.items)
+
+
+
   // for displaying products
   const { id } = useParams();
-  const selectedItems = products.find((item) => item.id === parseInt(id, 10));
+  const selectedItemss = items.find((item) => item.id === parseInt(id, 10));
 
+  const dispatch = useDispatch();
 
+ 
 
   return (
     <div className="cartdisplay">
-      {selectedItems ? (
-        <div className="cartdisplay-block">
+      {selectedItemss ? (
+        <div className="cartdisplay-block" key={selectedItemss.id}>
           <div className="cartdisplay-img-block">
-            <img src={selectedItems.img} alt="" />
+            <img src={selectedItemss.img} alt="" />
           </div>
 
           <div className="cartdisplay-title-block">
-            <p className="title-para">{selectedItems.title}</p>
-            <p className="price">Rs. {selectedItems.price}</p>
+            <p className="title-para">{selectedItemss.title}</p>
+            <p className="price">Rs. {selectedItemss.price}</p>
             <p className="price-para">(incl. of all taxes)</p>
 
             <hr />
@@ -64,19 +71,11 @@ function CartDisplay() {
                  </div>
             </div>
 
-            <div className="quantity-block">
-              <p>QUANTITY</p>
-
-              <div className="button-block">
-                <button className="minus" id="minus" >-</button>
-                <div className="val">1</div>
-                <button className="plus" id="plus" >+</button>
-              </div>
-            </div>
+           
             
-             <Link to="/cart" id="btn">
-             <button className="btn">ADD TO CART</button>
-             </Link>
+           
+             <button className="btn" onClick={() => dispatch(addToCart(selectedItemss))}>ADD TO CART</button>
+          
                
           </div>
         </div>
