@@ -6,7 +6,7 @@ import { getCartTotal,  increaseItemQuantity, decreaseItemQuantity,  removeItem 
 import { useEffect } from 'react';
 import "./Cart.css"
 import CloseIcon from '@mui/icons-material/Close'
-import { useState } from 'react';
+import Backdrop from './Backdrop';
 
 
 
@@ -27,7 +27,8 @@ function Cart({open, setOpen}) {
 
 
   return (
-  
+    <>
+    <Backdrop />
     <div className= {!open ? "cart" : "cart open"}  id="cart">
 
     <div className="cart1">
@@ -86,7 +87,7 @@ function Cart({open, setOpen}) {
     </div>
     </div>
 
-
+</>
    
 
 

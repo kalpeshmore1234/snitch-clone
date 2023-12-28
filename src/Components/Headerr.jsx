@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import "./Cart.css"
 import { useState } from 'react';
 import Cart from './Cart';
-
+import Backdrop from './Backdrop';
 
 
 
@@ -31,7 +31,7 @@ function Header() {
    <>
   
     <div className='header' >
-   
+    <Backdrop open={open} setOpen={setOpen} className={open ? "backdrop" : "backdrop"}/>
     <Cart open={open} setOpen={setOpen} className={open ? "cart" : "cart"}/>
 
       <div className="header1-block">

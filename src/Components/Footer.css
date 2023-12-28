@@ -1,7 +1,13 @@
 .footer{
-    background-color: green;
-    height: 3em;
+    background-color: white;
+    min-height: 6em;
     margin-top: auto;
-    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-top: 1px solid #a7a7a7;
 }
 

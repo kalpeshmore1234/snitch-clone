@@ -3,7 +3,7 @@ import "./Footer.css"
 
 function Footer() {
   return (
-    <div className='footer'>Footer</div>
+    <div className='footer'>©2023 SNITCH | All Rights Reserved</div>
   )
 }
 

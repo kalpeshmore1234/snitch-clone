@@ -3,6 +3,7 @@ import "./CartDisplay.css";
 import { useParams} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart} from "../features/cartSlice";
+import { useState } from "react";
 
 
 
@@ -19,6 +20,7 @@ function CartDisplay() {
   const dispatch = useDispatch();
 
  
+  
 
   return (
     <div className="cartdisplay">
