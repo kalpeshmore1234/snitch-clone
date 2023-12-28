@@ -112,6 +112,12 @@ img{
     border: none;
 }
 
+.btn:active{
+    background-color: white;
+    color:black;
+    border: 1px solid black;
+}
+
 
 
 .offers{
