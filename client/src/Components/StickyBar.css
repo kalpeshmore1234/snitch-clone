@@ -11,6 +11,13 @@
     justify-content:center;
     font-size: 13px;
     letter-spacing: 1px;
+    display: none;
+    width: 100%;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+    overflow: hidden;
+padding: none;
+
+    
   }
 
 #person-link{
@@ -27,5 +34,12 @@
   #person-link:active{
     color: red;
   }
+
+  @media (max-width:551px){
+   .sticky-bar{
+     display: block;
+   }
+
+}
 
   
