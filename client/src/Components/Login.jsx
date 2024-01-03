@@ -12,7 +12,7 @@ function Login() {
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    axios.post('http://snitchclone.netlify.app/login', {email, password})
+    axios.post('http://localhost:5173/login', {email, password})
     .then(result => {
        
        console.log(result)

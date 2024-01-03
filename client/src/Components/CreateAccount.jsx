@@ -13,7 +13,7 @@ function CreateAccount() {
 
    const handleSubmit = (e) =>{
          e.preventDefault()
-         axios.post('http://snitchclone.netlify.app/register', {firstName, lastName, email, password})
+         axios.post('http://localhost:5173/register', {firstName, lastName, email, password})
          .then(result => {
             
             console.log(result)

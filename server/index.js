@@ -5,9 +5,13 @@ const EmployeeModel = require("./models/Employee")
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials:true
+}))
 
-mongoose.connect("mongodb://snitchclone.netlify.app:27017/employee")
+mongoose.connect("mongodb+srv://Kalpesh:Kalpesh@12345@cluster0.5x3ssjj.mongodb.net/test?retryWrites=true&w=majority")
 
 app.post("/login", (req, res) => {
    const {email, password} = req.body
