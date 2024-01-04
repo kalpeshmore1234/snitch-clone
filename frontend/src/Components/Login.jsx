@@ -9,10 +9,10 @@ function Login() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   const navigate = useNavigate()
-
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) =>{
     e.preventDefault()
-    axios.post('http://deploy-mern-api.vercel.app/login', {email, password})
+    axios.post('http://deploy-mern-api-omega.vercel.app/login', {email, password})
     .then(result => {
        
        console.log(result)
