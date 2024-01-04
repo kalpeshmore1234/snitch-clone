@@ -1,38 +1,35 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors  = require("cors")
-const EmployeeModel = require("./models/Employee")
+const  RegisterModel = require("./models/Register")
 
 const app = express()
 app.use(express.json())
-app.use(cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials:true
-}))
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+))
 
-mongoose.connect("mongodb+srv://Kalpesh:Kalpesh@12345@cluster0.5x3ssjj.mongodb.net/test?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://klapesh3869:Kalpesh@12345@cluster0.rqwwonh.mongodb.net/Kalpesh?retryWrites=true&w=majority")
 
-app.post("/login", (req, res) => {
-   const {email, password} = req.body
-   EmployeeModel.findOne({email:email})
-   .then(user => {
-        if(user){
-            if(user.password === password){
-                res.json("Success")
-            } else{
-                res.json("the password is incorrect")
-            }
-        }else{
-            res.json("No record existed")
-        }
-   })
+app.get("/", (req, res) => {
+    res.json("Hello");
 })
-
-app.post("/register", (req, res) => {
-    EmployeeModel.create(req.body)
-    .then(employees => res.json(employees))
-    .catch((err) => res.json(err))
+app.post('/register', (req, res) => {
+    const {firstName, lastName,  email, password} = req.body;
+    RegisterModel.findOne({email: email})
+    .then(user => {
+        if(user) {
+            res.json("Already have an account")
+        } else {
+            RegisterModel.create({firstName: firstName, lastName: lastName, email: email, password: password})
+            .then(result => res.json(result))
+            .catch(err => res.json(err))
+        }
+    }).catch(err => res.json(err))
 })
 
 app.listen(5173, () => {

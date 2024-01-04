@@ -14,7 +14,7 @@ function CreateAccount() {
    axios.defaults.withCredentials = true;
    const handleSubmit = (e) =>{
          e.preventDefault()
-         axios.post('https://deploy-mern-api-iota.vercel.app//register', {firstName, lastName, email, password})
+         axios.post('https://deploy-mern-api.vercel.app/register', {firstName, lastName, email, password})
          .then(result => {
             
             console.log(result)
