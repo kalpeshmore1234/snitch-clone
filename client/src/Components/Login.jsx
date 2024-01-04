@@ -31,7 +31,7 @@ function Login() {
         </div>
 
        <div className="btn-block block" id="btn-block">
-         <button className='btn-sign' onClick={handleSubmit}>SIGN IN</button>
+         <button className='btn-sign'>SIGN IN</button>
        </div>
 
        <Link to="/register" className='register-link'>
