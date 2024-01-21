@@ -1,0 +1,9 @@
+.input-dir{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-dir label{
+    letter-spacing: 2px;
+    font-size: 13px;
+}

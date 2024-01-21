@@ -42,6 +42,7 @@
     outline: none;
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid #A7A7A7;
 }
 
 .blocks{
@@ -69,11 +70,42 @@
     border: none;
     outline: none;
     cursor: pointer;
+    
+}
+
+.create-btn:disabled{
+    background-color: white;
+    color: black;
 }
 
 .create-btn:active{
     color: black;
     background-color: white;
+}
+
+.error{
+    font-weight: bold;
+    font-size: 13px;
+    color: red;
+    border: none;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    display: flex;
+    justify-content: start;
+}
+
+.createe{
+    text-align: center;
+    font-size: 13px;
+}
+
+.register-linkk{
+    text-decoration: none;
+    color: black;
+}
+
+.register-linkk:active{
+    color: red;
 }
 
 @media (max-width: 433px){

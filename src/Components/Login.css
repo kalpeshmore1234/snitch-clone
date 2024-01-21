@@ -108,6 +108,17 @@ label{
     color: red;
 }
 
+.errorr{
+    font-weight: bold;
+    font-size: 13px;
+    color: red;
+    border: none;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    display: flex;
+    justify-content: start;
+}
+
 @media (max-width: 433px){
     .login-container{
         width: 350px;
