@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {  signOut } from "firebase/auth";
 import { auth } from './firebase';
-import "./Profile.css"
+import "./Login.css"
 import InputControl from './InputControl';
 
 function Profile(props) {
@@ -22,25 +22,25 @@ function Profile(props) {
         {
             props.name && props.email ?
             (
-                <div className="profile">
+                <div className="login">
         {/* <h2>{props.name && props.email ? `Welcome ${props.name} ${props.email}` : "Login please"}</h2>
         <button onClick={handleLogOut}>sign out</button> */}
-        <div className="profile-container">
-            <div className="profile-title-block">
-                  <p className="profile-title">
+        <div className="login-container">
+            <div className="title-block">
+                  <p className="login-title">
                     Welcome {props.name}
                   </p>
             </div>
 
-            <div className="profile-outer-input-block">
-                <div className="profile-input-blocks">
-                     <div className="profile-email-block profile-block">
+            <div className="outer-input-block">
+                <div className="input-blocks">
+                     <div className="email-block block">
                             <InputControl label="EMAIL"
-                className="profile-input" placeholder = {props.email} disabled/>
+                className="input" placeholder = {props.email} disabled/>
                      </div>
 
-             <div className="profile-btn-block profile-block" id="profile-btn-block">
-              <button className="profile-btn-signOut" onClick={handleLogOut}>
+             <div className="btn-block block" id="btn-block">
+              <button className="btn-sign" onClick={handleLogOut}>
                 SIGN OUT
               </button>
 
