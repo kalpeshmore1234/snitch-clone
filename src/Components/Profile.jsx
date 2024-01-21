@@ -51,8 +51,8 @@ function Profile(props) {
     </div>
             ):
             (
-                <div className="profile">
-                  <p className='profile-title'>Login please</p>
+                <div className="login">
+                  <p className='login-title'>Login please</p>
                 </div>
               
             )
