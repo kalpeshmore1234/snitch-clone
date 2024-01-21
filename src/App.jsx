@@ -19,20 +19,21 @@ function App() {
 
   const [userName, setUserName] = useState("")
   const [email, setEmail] = useState("")
+
+
+  useEffect(() => {
+     auth.onAuthStateChanged((user) => {
+          if(user){
+            setUserName(user.displayName)
+            setEmail(user.email)
+          }
+          else{
+            setUserName("")
+            setEmail("")
+          }
+     })
+  }, [])
  
- 
- useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      if(user){
-        setUserName(user.displayName)
-        setEmail(user.email)
-        console.log(user)
-      }else{
-        setUserName("")
-      }
-      console.log(user)
-    })
- }, [])
 
   return (
    
