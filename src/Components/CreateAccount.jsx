@@ -19,6 +19,8 @@ function CreateAccount() {
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
   const handleSubmission = () => {
+
+
  
     if (
       !values.firstname ||
@@ -38,10 +40,12 @@ function CreateAccount() {
       .then(async (res) => {
         setSubmitButtonDisabled(false);
         const user = res.user;
+        console.log(user)
         await updateProfile(user, {
           displayName: `${values.firstname}   ${values.lastname}`,
           email: values.email,
         });
+     
         navigate("/profile");
       })
       .catch((err) => {

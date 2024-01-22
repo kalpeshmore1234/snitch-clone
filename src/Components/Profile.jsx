@@ -18,16 +18,16 @@ function Profile(props) {
   }
 
   return (
-    <>
+  /*   <>
         {
             props.name && props.email ?
-            (
+            ( */
                 <div className="login">
         {/* <h2>{props.name && props.email ? `Welcome ${props.name} ${props.email}` : "Login please"}</h2>
         <button onClick={handleLogOut}>sign out</button> */}
         <div className="login-container">
             <div className="title-block">
-                  <p className="login-title">
+                  <p className="login-title" >
                     Welcome {props.name}
                   </p>
             </div>
@@ -49,7 +49,7 @@ function Profile(props) {
             </div>
         </div>
     </div>
-            ):
+          /*   ):
             (
                 <div className="login">
                   <p className='login-title'>Login please</p>
@@ -57,7 +57,7 @@ function Profile(props) {
               
             )
         }
-    </>
+    </> */
    
   )
 }
